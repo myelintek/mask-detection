@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.4.0-runtime-ubuntu18.04
+FROM tensorflow/tensorflow:latest-devel-gpu
 
 ENV SHELL /bin/bash
 ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64
