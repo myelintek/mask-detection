@@ -27,7 +27,7 @@ ADD bash.bashrc /etc/bash.bashrc
 
 RUN cd /mlsteam/lab && \
 	git clone https://github.com/chandrikadeb7/Face-Mask-Detection.git && \
-    jupyter nbconvert --to notebook --inplace --execute entry.ipynb inference.ipynb && \
+    jupyter nbconvert --to notebook --inplace --execute entry.ipynb inference.ipynb training.ipynb && \
 	rm -rf /mlsteam/data/*
 
 RUN rm -rf /usr/lib/x86_64-linux-gnu/libcuda.so /usr/lib/x86_64-linux-gnu/libcuda.so.1 /tmp/*
