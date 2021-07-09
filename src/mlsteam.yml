@@ -1,0 +1,7 @@
+command: ipython3 entry.ipynb
+params:
+  batch_size: 32
+  learning_rate: 0.0001
+  epochs: 20
+  train_dir: 'dataset'
+  weights_file: 'mask_detector.model'
