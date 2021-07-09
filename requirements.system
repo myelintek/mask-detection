@@ -5,3 +5,4 @@ unzip
 vim
 wget
 zip
+python3-opencv
