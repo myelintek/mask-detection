@@ -13,6 +13,7 @@ ADD clean-layer.sh requirements.txt requirements.system install-sshd.sh set_term
 RUN sed -i 's/archive.ubuntu.com/tw.archive.ubuntu.com/g' /etc/apt/sources.list && \
     mkdir -p /mlsteam/data && \
     mkdir -p /mlsteam/lab && \
+    mkdir -p /mlsteam/.keras/models && \
     apt-get update && \
     xargs apt-get install -y < /tmp/requirements.system && \
     pip3 install --no-cache-dir -r /tmp/requirements.txt && \
@@ -24,6 +25,7 @@ RUN pip3 install --upgrade https://github.com/myelintek/lib-mlsteam/releases/dow
 
 ADD src /mlsteam/lab
 ADD bash.bashrc /etc/bash.bashrc
+ADD mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_224_no_top.h5 /mlsteam/.keras/models/
 
 RUN cd /mlsteam/lab && \
 	git clone https://github.com/chandrikadeb7/Face-Mask-Detection.git && \
